@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="mysqlTables" targetRuntime="MyBatis3">
+        <!--数据库配置-->
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@localhost:1521:ORCL"
+                        userId="yxy" password="yxy">
+        </jdbcConnection>
+        <!--java类型解析-->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--模型生成包名-->
+        <javaModelGenerator targetPackage="com.yxy.edu.model" targetProject=".\src">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--mybatis的映射.xml-->
+        <sqlMapGenerator targetPackage="com.yxy.edu.mapper" targetProject=".\src">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--mybatis的mapper接口生成的包路径-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.yxy.edu.mapper" targetProject=".\src">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--配置生成表的模型-->
+        <!--<table tableName="t_ctl_param" domainObjectName="CtlParam"></table>
+        <table tableName="t_member" domainObjectName="Member"></table>
+        <table tableName="t_member_level" domainObjectName="MemberLevel"></table>
+        <table tableName="t_member_scoreoperation" domainObjectName="MemberScoreoperation"></table>
+        <table tableName="t_member_share" domainObjectName="MemberShare"></table>-->
+
+        <table tableName="t_product_brand" domainObjectName="ProductBrand"></table>
+        <table tableName="t_product_category" domainObjectName="ProductCategory"></table>
+        <table tableName="t_product" domainObjectName="Product"></table>
+    </context>
+
+</generatorConfiguration>
